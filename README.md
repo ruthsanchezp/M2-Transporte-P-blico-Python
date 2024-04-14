@@ -1,38 +1,29 @@
-Caso de aplicación
+# Análisis de Correlación entre Uso del Transporte Público y Ventas de Scooters
 
-El gerente en “Electromobility Plus” les dice que el área de marketing ha decidido que
-quiere hacer una serie de campañas para ayudar a promover las ventas de scooters. Ustedes
-como equipo de análisis de datos deben utilizar los datos del Censo de los Estados Unidos
-sobre el uso del transporte público por código postal. El propósito es analizar si el nivel de
-uso del transporte público tiene alguna correlación con las ventas de la empresa de scooter
-mencionada anteriormente, en una zona postal determinada, de tal manera que el equipo
-de marketing pueda realizar una campaña focalizada por zona postal.
+En este proyecto de análisis de datos, se utiliza el conjunto de datos del Censo de los Estados Unidos sobre el uso del transporte público por código postal para analizar si existe alguna correlación entre el nivel de uso del transporte público y las ventas de scooters en una zona postal determinada. El objetivo es proporcionar recomendaciones al equipo de marketing de la empresa "Electromobility Plus" para realizar campañas focalizadas por zona postal.
 
-Aplicación:
+## Conjunto de Datos
+El conjunto de datos utilizado se encuentra en el archivo CSV llamado `public_transportation_statistics_by_zip_code.csv`. Contiene tres columnas:
+- `zip_code`: Código postal de cinco dígitos de los Estados Unidos.
+- `public_transportation_pct`: Porcentaje de la población en una zona postal que utiliza el transporte público para ir al trabajo.
+- `public_transportation_population`: Número bruto de personas en una zona postal que utilizan el transporte para ir al trabajo.
 
-Después de leer el caso, use el archivo CSV con el conjunto de datos de transporte público
-por código postal:
-public_transportation_statistics_by_zip_code.csv
+## Proceso de Análisis
+El análisis se realiza en varias etapas:
+1. **Preprocesamiento de Datos:**
+   - Se copian los datos del transporte público en un DataFrame.
+   - Se encuentran los porcentajes máximo y mínimo, y se eliminan los valores por debajo de 0.
+2. **Cálculo de Ventas Potenciales:**
+   - Se calcula el promedio de ventas potenciales para clientes que viven en zonas de alto transporte público (> 10%) y en zonas de bajo uso del transporte público (≤ 10%).
+3. **Visualización de Datos:**
+   - Se lee y grafica un histograma de la distribución de los datos.
+4. **Estimación de Ventas por Código Postal:**
+   - Se agrupan los potenciales clientes en función del uso del transporte público por código postal y se estima el número promedio de ventas.
+   - Se crea un diagrama de dispersión para comprender la relación entre el uso del transporte público y las ventas.
+5. **Recomendaciones:**
+   - Basado en el análisis, se proporcionan recomendaciones al equipo de marketing sobre las oportunidades de ventas.
 
-1. Este conjunto de datos tiene tres columnas:
-• zip_code: Este es el código postal de cinco dígitos de los Estados Unidos que se
-utiliza para identificar la región.
-• public_transportation_pct: Este es el porcentaje de la población en una zona
-postal que ha sido identificado como usuarios del transporte público para ir al
-trabajo.
-• public_transportation_population: Este es el número bruto de personas en una
-zona postal que utilizan el transporte para ir al trabajo.
-3. Copie el conjunto de datos de transporte público en un DataFrame.
-4. Encuentre los porcentajes máximo y mínimo en estos datos. Los valores por debajo
-de 0, lo más probable que indique datos faltantes.
-5. Calcule las ventas potenciales promedio para clientes que viven en zonas de alto
-transporte público (más del 10%), así como en las zonas de bajo uso del transporte
-público (menor o igual al 10%).
-6. Lea los datos en Pandas y grafique un histograma de la distribución para producir un
-histograma.
-7. Agrupe a los potenciales clientes en función del uso del transporte público por
-código postal y estime el número promedio de ventas, además, cree un diagrama
-de dispersión para comprender mejor la relación entre el uso del transporte público
-y las potenciales ventas. Exporte estos datos a un archivo Excel.
-8. Con base en este análisis, ¿Qué recomendaciones le daría al equipo de marketing de
-la empresa al considerar oportunidades de ventas?
+## Resultados y Recomendaciones
+Con base en el análisis realizado, se pueden proporcionar recomendaciones al equipo de marketing sobre las oportunidades de ventas. Estas recomendaciones pueden incluir estrategias para dirigir campañas de marketing a áreas específicas con alto uso de transporte público, identificar posibles clientes potenciales en función de la ubicación y la disponibilidad de scooters, entre otros aspectos relevantes.
+
+Este análisis proporciona información valiosa que puede ayudar al equipo de marketing a tomar decisiones más informadas y efectivas para promover las ventas de scooters en diferentes áreas geográficas.
