@@ -51,6 +51,15 @@ print("\n",correlacion)
 df.hist(bins=30, alpha=0.5, figsize=(6, 5))
 plt.show()
 
-#GRafico de dispersión
-plt.scatter(df['public_transportation_pct'], df['public_transportation_population'])
+#Gráficos de dispersión
+plt.scatter(df['zip_code'], df['public_transportation_pct'])
+plt.xlabel('Cód. Postal')
+plt.ylabel('(%) Transporte público')
+plt.title('(%) Transporte público y Cód. Postal')
+plt.show()
+
+plt.scatter(df['zip_code'], df['public_transportation_population'])
+plt.xlabel('Cód. Postal')
+plt.ylabel('Población')
+plt.title('Población y Cód. Postal')
 plt.show()
